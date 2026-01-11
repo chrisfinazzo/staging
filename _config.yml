@@ -1,0 +1,63 @@
+title: Chris Finazzo
+author:
+  name: Chris Finazzo
+  email: chris@chrisfinazzo.com
+description: Writer & Technologist
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: https://chrisfinazzo.com
+
+minima:
+  skin: classic
+  date_format: "%b %-d, %Y"
+  nav_pages:
+  - colophon.markdown
+  - reading.markdown
+  - notes.markdown
+  - links.markdown
+  - contact.markdown
+
+  social_links:
+    - icon: "github"
+      title: "GitHub"
+      url: "https://github.com/chrisfinazzo"
+    - icon: "linkedin"
+      title: "LinkedIn"
+      url: "https://linkedin.com/in/chrisfinazzo"
+    - icon: "mastodon"
+      title: "Mastodon"
+      url: "https://mastodon.social/@chrisfinazzo"
+
+  show_excerpts: true
+  hide_site_feed_link: false
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:year/:month/:day/:title/
+  links:
+    output: true
+    permalink: /links/:year/:month/:day/:title/
+defaults:
+-
+  scope:
+    path: ""
+    type: "notes"
+  values:
+    layout: "page"
+    title: ""
+    permalink: "/:collection/:year/:month/:day/:title/"
+    post_type: "Note"
+
+# Build settings
+remote_theme: jekyll/minima@ec2ea1a
+plugins:
+  - jekyll-feed
+  - jekyll/footnotes
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+sass:
+  quiet_deps: true
+  silence_deprecations: [import]
+  style: compressed

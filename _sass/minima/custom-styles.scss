@@ -1,0 +1,255 @@
+/**
+ * Contact Form Styles for Minima Theme
+ * Place this in: _sass/minima/custom-styles.scss
+ * 
+ * Integrates with Minima's color scheme, spacing, and responsive design
+ */
+
+/* Form Container Styling */
+.form-container {
+  margin: 0 auto;
+  padding: $spacing-unit;
+  background-color: $background-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid $border-color-01;
+  
+  @include media-query($on-palm) {
+    padding: $spacing-unit * 0.75;
+  }
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: $spacing-unit * 0.75;
+}
+
+/* Label Styling */
+.form-container label,
+.form-group label {
+  display: block;
+  margin-bottom: $spacing-unit * 0.25;
+  color: $brand-color;
+  font-weight: 500;
+  font-size: $base-font-size * 0.9;
+}
+
+/* Form Input Fields */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="number"],
+.form-container input[type="tel"],
+.form-container input[type="date"],
+.form-container input[type="url"],
+.form-container input[type="search"],
+.form-container textarea,
+.form-container select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: $spacing-unit * 0.375;
+  border: 1px solid $border-color-02;
+  border-radius: 4px;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  color: $text-color;
+  background-color: $background-color;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Improved Placeholder styling - more legible */
+.form-container input::placeholder,
+.form-container textarea::placeholder {
+  color: $text-color;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+/* Focus states for form elements */
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+  outline: none;
+  border-color: $link-base-color;
+  box-shadow: 0 0 0 3px rgba($link-base-color, 0.1);
+  background-color: $background-color;
+}
+
+/* Remove placeholder on focus for cleaner UX */
+.form-container input:focus::placeholder,
+.form-container textarea:focus::placeholder {
+  opacity: 0.3;
+}
+
+/* Form elements hover state */
+.form-container input:hover,
+.form-container textarea:hover,
+.form-container select:hover {
+  border-color: $border-color-03;
+}
+
+/* Textarea specific styling */
+.form-container textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: $base-line-height;
+}
+
+/* Checkbox and Radio styling */
+.checkbox-group,
+.radio-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-unit * 0.25;
+}
+
+.form-container input[type="checkbox"],
+.form-container input[type="radio"] {
+  margin-right: $spacing-unit * 0.25;
+  cursor: pointer;
+  width: auto;
+}
+
+.checkbox-label,
+.radio-label {
+  display: inline-block;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+/* Submit Button */
+.submit-btn {
+  display: block;
+  width: 100%;
+  background-color: $link-base-color;
+  color: $background-color;
+  border: none;
+  border-radius: 4px;
+  padding: $spacing-unit * 0.375 $spacing-unit * 0.75;
+  font-size: $base-font-size;
+  font-weight: 500;
+  font-family: $base-font-family;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  
+  &:hover {
+    background-color: $link-hover-color;
+    text-decoration: none;
+  }
+  
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+/* Form Error Styling */
+.error-message {
+  color: #e53935;
+  font-size: $base-font-size * 0.85;
+  margin-top: $spacing-unit * 0.125;
+}
+
+.form-container input.error,
+.form-container textarea.error,
+.form-container select.error {
+  border-color: #e53935;
+  background-color: #fff8f8;
+  
+  &:focus {
+    border-color: #e53935;
+    box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.1);
+  }
+}
+
+/* Required field indicator */
+.required-field::after {
+  content: "*";
+  color: #e53935;
+  margin-left: $spacing-unit * 0.125;
+}
+
+/* Help text styling - more legible */
+.help-text {
+  color: $brand-color;
+  font-size: $base-font-size * 0.85;
+  margin-top: $spacing-unit * 0.125;
+  display: block;
+  opacity: 0.8;
+}
+
+/* Netlify honeypot field - keep hidden */
+.form-container p[style*="display:none"],
+.form-container p[style*="display: none"] {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@include media-query($on-palm) {
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container input[type="password"],
+  .form-container input[type="number"],
+  .form-container input[type="tel"],
+  .form-container input[type="date"],
+  .form-container input[type="url"],
+  .form-container input[type="search"],
+  .form-container textarea,
+  .form-container select {
+    padding: $spacing-unit * 0.3;
+  }
+  
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+/* Form grid for side-by-side fields */
+.form-row {
+  display: flex;
+  gap: $spacing-unit * 0.5;
+  margin-bottom: $spacing-unit * 0.75;
+  
+  @include media-query($on-palm) {
+    flex-direction: column;
+    gap: $spacing-unit * 0.75;
+  }
+}
+
+.form-col {
+  flex: 1;
+}
+
+/* Success message after form submission */
+.success-message {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: $spacing-unit * 0.5;
+  border-radius: 4px;
+  margin-bottom: $spacing-unit * 0.75;
+  text-align: center;
+  border: 1px solid #c8e6c9;
+}
+
+/* Dark theme support (for Minima's dark skin) */
+@media (prefers-color-scheme: dark) {
+  .form-container {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form-container input::placeholder,
+  .form-container textarea::placeholder {
+    opacity: 0.4;
+  }
+  
+  .form-container input.error,
+  .form-container textarea.error,
+  .form-container select.error {
+    background-color: rgba(229, 57, 53, 0.1);
+  }
+  
+  .success-message {
+    background-color: rgba(46, 125, 50, 0.2);
+    border-color: rgba(46, 125, 50, 0.3);
+  }
+}
