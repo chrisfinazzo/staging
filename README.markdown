@@ -1,3 +1,3 @@
-## CF-Testing
+## CF-Stage
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/dbdb45f4-001f-4bed-99af-7a5686b0e2bc/deploy-status)](https://app.netlify.com/projects/cf-testing/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/20267ef8-c49d-4fe7-9987-ea306fd513c0/deploy-status)](https://app.netlify.com/projects/cf-stage/deploys)
